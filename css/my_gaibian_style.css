@@ -1,0 +1,33 @@
+/*header部分*/
+body{
+	overflow: hidden;
+	background: #fff;
+}
+.navtou{
+	background: #2e67a5;
+	
+}
+.navtou a{
+	color: #fff;
+}
+#daohang{
+	font-size: 15px;
+	margin-top:5px;
+}
+.navtou h1{
+	color: #fff;
+}
+/*图片轮播部分*/
+.lunbo{
+	height: 240px;
+}
+/*审车预约部分,圆圈图标部分*/
+.fuwu{
+	display: flex;
+	
+}
+.fuwu li{
+	width: 25%;
+	
+	list-style: none;
+}

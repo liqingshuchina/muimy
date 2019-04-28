@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			body,
+			html,
+			#allmap {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				margin: 10px auto;
+				font-family: "微软雅黑";
+			}
+		</style>
+		    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=m0MYNaO8ARdZMRiLvDCxfeHV5uo6ExIT"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">导航</h1>
+		</header>
+		<!--引入地图-->
+		<div id="allmap"></div>
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map = new BMap.Map("allmap"); // 创建Map实例 湄潭县经度：107.48  纬度：27.77
+			//	map.centerAndZoom(new BMap.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
+			//--------------------------------------------//
+			var point = (new BMap.Point(116.404, 39.915)); //创建中心点坐标
+			map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别  
+			//	定位-----------------------------------------
+			//浏览器定位
+			var geolocation = new BMap.Geolocation();
+			geolocation.getCurrentPosition(function(y) {
+				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+					//关于状态码
+					//BMAP_STATUS_SUCCESS        		检索成功。对应数值“0”。
+					//BMAP_STATUS_CITY_LIST        		城市列表。对应数值“1”。
+					//BMAP_STATUS_UNKNOWN_LOCATION  	位置结果未知。对应数值“2”。
+					//BMAP_STATUS_UNKNOWN_ROUTE     	导航结果未知。对应数值“3”。
+					//BMAP_STATUS_INVALID_KEY       	非法密钥。对应数值“4”。
+					//BMAP_STATUS_INVALID_REQUEST   	非法请求。对应数值“5”。
+					//BMAP_STATUS_PERMISSION_DENIED     没有权限。对应数值“6”。(自 1.1 新增)
+					//BMAP_STATUS_SERVICE_UNAVAILABLE   服务不可用。对应数值“7”。(自 1.1 新增)
+					//BMAP_STATUS_TIMEOUT        		超时。对应数值“8”。(自 1.1 新增)
+					var mk = new BMap.Marker(y.point);
+					map.addOverlay(mk);
+					map.panTo(y.point);
+					alert('您的位置：' + y.point.lng + ',' + y.point.lat); //这个对象的lng属性表示经度，lat属性表示纬度
+				} else {
+					alert('failed' + this.getStatus());
+				}
+			});
+			
+			//IP定位
+//			function myFun(result) {
+//				var cityName = result.name;
+//				map.setCenter(cityName);
+//				alert("当前定位城市:" + cityName);
+//			}
+//			var myCity = new BMap.LocalCity();
+//			myCity.get(myFun);
+			
+			//定位SDK辅助定位
+//			var geolocation = new BMap.Geolocation();
+//			// 开启SDK辅助定位
+//			geolocation.enableSDKLocation();
+//			geolocation.getCurrentPosition(function(r) {
+//				if(this.getStatus() == BMAP_STATUS_SUCCESS) {
+//					var mk = new BMap.Marker(r.point);
+//					map.addOverlay(mk);
+//					map.panTo(r.point);
+//					alert('您的位置：' + r.point.lng + ',' + r.point.lat);
+//				} else {
+//					alert('failed' + this.getStatus());
+//				}
+//			});
+//添加谷歌marker和label
+//  var markergg = new BMap.Marker(point);
+// 	map.addOverlay(markergg); //添加谷歌marker
+//  var labelgg = new BMap.Label("未转换的谷歌标注（错误）",{offset:new BMap.Size(20,-10)});
+//  markergg.setLabel(labelgg); //添加谷歌label
+//  //坐标转换完之后的回调函数
+//  translateCallback = function (data){
+//    if(data.status === 0) {
+//      var marker = new BMap.Marker(data.points[0]);
+//      map.addOverlay(marker);
+//      var label = new BMap.Label("转换后的百度标注（正确）",{offset:new BMap.Size(20,-10)});
+//      marker.setLabel(label); //添加百度label
+//      map.setCenter(data.points[0]);
+//    }
+//  }
+//   setTimeout(function(){
+//      var convertor = new BMap.Convertor();
+//      var pointArr = [];
+//      pointArr.push(point);
+//      convertor.translate(pointArr, 3, 5, translateCallback)
+//  }, 1000);
+			//  定位----------------------------------------------
+			window.setTimeout(function() {
+				map.panTo(new BMap.Point(116.409, 39.918));
+			}, 2000); //等待两秒钟后，地图它会移动到新中心点。panTo()方法将让地图平滑移动至新中心点，如果移动距离超过了当前地图区域大小，则地图会直跳到该点。
+
+			//添加地图类型控件
+			map.addControl(new BMap.MapTypeControl({
+				//地图控件类型
+				mapTypes: [
+					BMAP_NORMAL_MAP, //地图
+					BMAP_HYBRID_MAP, //混合
+					BMAP_SATELLITE_MAP, //卫星
+				]
+			}));
+			var yjp = {
+				anchor: BMAP_ANCHOR_TOP_LEFT
+			};
+			// anchor表示控件的停靠位置，即控件停靠在地图的哪个角。当地图尺寸发生变化时，控件会根据停靠位置的不同来调整自己的位置。
+			//BMAP_ANCHOR_TOP_LEFT 		表示控件定位于地图的左上角。 
+			//BMAP_ANCHOR_TOP_RIGHT 	表示控件定位于地图的右上角。 
+			//BMAP_ANCHOR_BOTTOM_LEFT 	表示控件定位于地图的左下角。 
+			//BMAP_ANCHOR_BOTTOM_RIGHT 	表示控件定位于地图的右下角。 
+
+			map.addControl(new BMap.ScaleControl(yjp));
+
+			//平移缩放控件的类型
+			//var inp = {type: BMAP_NAVIGATION_CONTROL_SMALL}    
+			//map.addControl(new BMap.NavigationControl(inp));
+			//BMAP_NAVIGATION_CONTROL_LARGE 表示显示完整的平移缩放控件
+			//BMAP_NAVIGATION_CONTROL_SMALL 表示显示小型的平移缩放控件
+			//BMAP_NAVIGATION_CONTROL_PAN   表示只显示控件的平移部分功能
+			//BMAP_NAVIGATION_CONTROL_ZOOM  表示只显示控件的缩放部分功能
+			//控件
+			//控件位置偏移--------------------
+			var opts = {
+				offset: new BMap.Size(120, 25)
+			};
+			var optss = {
+				offset: new BMap.Size(110, 10)
+			};
+			//------------------------------
+			//	map.addControl(new BMap.ScaleControl(opts));//比例尺控件
+			map.addControl(new BMap.NavigationControl()); //左上角，添加默认缩放平移缩放控件
+			//	map.addControl(new BMap.ScaleControl());
+			map.addControl(new BMap.OverviewMapControl()); //右下角缩略图控件
+			map.addControl(new BMap.MapTypeControl(optss)); //地图类型
+			map.addControl(new BMap.GeolocationControl()); //定位,针对移动端开发
+			map.addControl(new BMap.CopyrightControl()); //版权定位
+			map.setCurrentCity("北京"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
+			map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+		</script>
+	</body>
+</html>

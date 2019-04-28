@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/my_gaibian_style.css" />
+  
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav navtou">
+		<a class="mui-pull-left mui-icon mui-icon-spinner-cycle mui-spin" id="qq"></a>
+	    <h1 class="mui-title">车务之家</h1>
+	    <a class=" mui-icon  mui-pull-right" id="daohang">导航</a>
+	</header>
+	<!--导航部分-->
+	  <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	document.getElementById("daohang").addEventListener('tap',function(){
+      		mui.openWindow({
+			url: 'sub/daohang.html', 
+			id:'daohang'
+		})
+      	})
+    </script>
+    <!--导航部分结束-->
+    <!----------------------------------------------->
+    <!--++++++-->
+    <!--图片轮播部分开始-->
+    <div id="slider" class="mui-slider lunbo" >
+      <div class="mui-slider-group mui-slider-loop">
+        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+          <a href="#">
+            <img src="img/lun (2).jpg">
+          </a>
+        </div>
+        <!-- 第一张 -->
+        <div class="mui-slider-item">
+          <a href="#">
+            <img src="img/lun (1).jpg">
+          </a>
+        </div>
+        <!-- 第二张 -->
+        <div class="mui-slider-item">
+          <a href="#">
+            <img src="img/lun (2).jpg">
+          </a>
+        </div>
+      
+        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+          <a href="#">
+            <img src="img/lun (1).jpg">
+          </a>
+        </div>
+      </div>
+      <div class="mui-slider-indicator">
+        <div class="mui-indicator mui-active"></div>
+        <div class="mui-indicator"></div>
+      
+      </div>
+    </div>
+    <script>
+    	//获得slider插件对象
+				var gallery = mui('.mui-slider');
+				gallery.slider({
+				  interval:2000//自动轮播周期，若为0则不自动播放，默认为0；
+				});
+    </script>
+    <!--图片轮播部分结束-->
+    <!------------------------------------------------------------------->
+    <!--圆圈排列部分开始-->
+   <ul class="fuwu">
+   	<li><a href="#"><img src="img/crbiao.png"></a>
+    		<p>审车预约</p>
+   	</li>
+  	<li><a href="#"><img src="img/crbiao (1).png"></a>
+    		<p>车务服务</p>
+   	</li>
+   	<li><a href="#"><img src="img/crbiao (2).png"></a>
+    		<p>车险计算</p>
+   	</li>
+   	<li><a href="#"><img src="img/crbiao.png"></a>
+    		<p>推荐有礼</p>
+   	</li>
+   
+   </ul>
+   <ul class="fuwu">
+   	<li><a href="#"><img src="img/crbiao (1).png"></a>
+    		<p>违章查询</p>
+   	</li>
+  	<li><a href="#"><img src="img/crbiao (2).png"></a>
+    		<p>救援维修</p>
+   	</li>
+   	<li><a href="#"><img src="img/crbiao (1).png"></a>
+    		<p>低价洗车</p>
+   	</li>
+   	<li><a href="#"><img src="img/crbiao.png"></a>
+    		<p>车辆常识</p>
+   	</li>
+   
+   </ul>
+    
+    
+    
+    
+    
+    <!--------------------------------------------------------==================-->
+    <!--底座部分-->
+    <nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item mui-active">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-phone"></span>
+            <span class="mui-tab-label">我的车辆</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-email"></span>
+            <span class="mui-tab-label">我的消息</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-gear"></span>
+            <span class="mui-tab-label">个人中心</span>
+        </a>
+    </nav>
+    <!--底座部分结束-->
+</body>
+</html>
