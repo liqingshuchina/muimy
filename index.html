@@ -7,10 +7,32 @@
     <script src="js/mui.min.js"></script>
     <link href="css/mui.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/my_gaibian_style.css" />
-  
 </head>
 <body>
-	<header class="mui-bar mui-bar-nav navtou">
+    <!--------------------------------------------------------==================-->
+    <!--底座tab部分-->
+    <nav class="mui-bar mui-bar-tab" id="chooseBox">
+        <a class="mui-tab-item mui-active">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-navigate"></span>
+            <span class="mui-tab-label">我的车辆</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-email"></span>
+            <span class="mui-tab-label">我的消息</span>
+        </a>
+        <a class="mui-tab-item">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">个人中心</span>
+        </a>
+    </nav>
+    <!--<!--切换对应的内容部分-->
+<div class="tap" id="divBox">
+    	<div class="shows hidden">
+    			<header class="mui-bar mui-bar-nav navtou">
 		<a class="mui-pull-left mui-icon mui-icon-spinner-cycle mui-spin" id="qq"></a>
 	    <h1 class="mui-title">车务之家</h1>
 	    <a class=" mui-icon  mui-pull-right" id="daohang">导航</a>
@@ -101,33 +123,226 @@
    	<li><a href="#"><img src="img/crbiao.png"></a>
     		<p>车辆常识</p>
    	</li>
-   
    </ul>
+        <!--圆圈排列部分开始结束-->
+        <!--------------------------------->
+        <!--添加车辆部分-->
+        <div class="tianjia">
+        	<div class="tjkuang" id="carmesg">
+        		<span class="mui-icon mui-icon-plus"></span>
+        		<p>添加车辆</p>
+        	</div>
+        </div>
+         <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	document.getElementById("carmesg").addEventListener('tap',function(){
+      		mui.openWindow({
+			url: 'sub/carmesg.html', 
+			id:'carmesg'
+		})
+      	})
+    </script>
+     <!--添加车辆部分-->
+    <!---------------------------------------------------++++++++++-->
+    <!--热点推荐部分-->
+  <div class="mui-content hot">
+      热点推荐
+  </div>
     
     
-    
-    
-    
-    <!--------------------------------------------------------==================-->
-    <!--底座部分-->
-    <nav class="mui-bar mui-bar-tab">
-        <a class="mui-tab-item mui-active">
-            <span class="mui-icon mui-icon-home"></span>
-            <span class="mui-tab-label">首页</span>
-        </a>
-        <a class="mui-tab-item">
-            <span class="mui-icon mui-icon-phone"></span>
-            <span class="mui-tab-label">我的车辆</span>
-        </a>
-        <a class="mui-tab-item">
-            <span class="mui-icon mui-icon-email"></span>
-            <span class="mui-tab-label">我的消息</span>
-        </a>
-        <a class="mui-tab-item">
-            <span class="mui-icon mui-icon-gear"></span>
-            <span class="mui-tab-label">个人中心</span>
-        </a>
-    </nav>
+    <!--热点推荐结束-->
+    	</div>
+    <!--1//首页部分结束-->
+    <!--2//第二页我的车辆部分开始-->
+    	<div class="hidden">
+    		<!--con-->
+    		<header class="mui-bar mui-bar-nav myche">
+    		    <h1 class="mui-title">我的车辆</h1>
+    		    <a id="jiacar">添加车辆</a>
+    		</header>
+    		<div class="contentcar">
+    			<img src="img/bujiadi.jpg" width="100%" height="100%" />
+    			<img src="img/wushuju.jpg" width="100%" height="100%">
+    		</div>
+    		  <script type="text/javascript" charset="utf-8">
+      	mui.init();
+      	document.getElementById("jiacar").addEventListener('tap',function(){
+      		mui.openWindow({
+			url: 'sub/carmesg.html', 
+			id:'jiacar'
+		})
+      	})
+    </script>
+    		<!--con-end-->
+    	</div>
+    	 <!--2//第二页我的车辆部分结束-->
+    	<!--3//第三页我的消息部分开始-->
+    	<div class="hidden">
+    	<!--con-->
+    		<header class="mui-bar mui-bar-nav myxiaoxi">
+    		    <h1 class="mui-title">我的消息</h1>
+    		</header>
+    		<div class="mesmy">
+    			<img src="img/wushuju.jpg" width="100%" height="100%" />
+    			<img src="img/daben.jpg" width="100%" height="100%"> 
+    		</div>
+    		<!--con--end-->
+    	</div>
+    	<!--3//第三页我的消息部分结束-->
+    	<!--4//第四页个人中心开始-->
+    	<div class="hidden">
+    		<!--con-->
+    			<div class="cenren">
+    				<div class="shezhi" id="shezhi">
+    					<i class="mui-icon mui-icon-gear"></i>
+    				</div>
+    				<div class="close">
+    					<h5>上传头像</h5>
+    					<input type="file" id="fileInp" />
+    					<div id="dis"></div>
+    				</div>
+    			</div>
+    			<!--基本信息部分-->
+    			<div class="jibenmes">
+    				<h4>基本信息</h4>
+    				<ul>
+    					<li>
+    						<div class="mui-icon mui-icon-personadd"></div>
+    						<p>基本资料</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-locked"></div>
+    						<p>修改密码</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-home"></div>
+    						<p>我的车辆</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-map"></div>
+    						<p>我的地址</p>
+    					</li>
+    					
+    				</ul>
+    				
+    				<ul>
+    					<li>
+    						<div class="mui-icon mui-icon-compose"></div>
+    						<p>我的优惠券</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-chatboxes"></div>
+    						<p>支付日志</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-redo"></div>
+    						<p>分享记录</p>
+    					</li>
+    					
+    					
+    				</ul>
+    			</div>
+    			<!--我的订单部分-->
+    			<div class="jibenmes">
+    				<h4>我的订单</h4>
+    				
+    				
+    				<ul>
+    					<li>
+    						<div class="mui-icon mui-icon-home"></div>
+    						<p>审车记录</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-chat"></div>
+    						<p>车务订单</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-chatboxes"></div>
+    						<p>车险订单</p>
+    					</li>
+    					
+    					
+    				</ul>
+    			</div>
+    			<!--我是商家-->
+    			<div class="jibenmes" style="margin-bottom:80px;">
+    				<h4>我是商家</h4>
+    				
+    				
+    				<ul>
+    					<li>
+    						<div class="mui-icon mui-icon-refresh"></div>
+    						<p>救援维修</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-home"></div>
+    						<p>低价洗车</p>
+    					</li>
+    					<li>
+    						<div class="mui-icon mui-icon-star"></div>
+    						<p>我的关注</p>
+    					</li>
+    					
+    					
+    				</ul>
+    			</div>
+    			<script type="text/javascript">
+    				var file=document.getElementById("fileInp");
+    				var div=document.getElementById("dis");
+    				
+    				//1.绑定点击事件
+    				file.onchange=function(){
+    					//获取用户上传的文件
+    					var fileUser=file.files[0];
+    					var xhr=new XMLHttpRequest();
+    					xhr.open("post","file.php");
+    					//单独设置
+    					var formdata=new FormData();
+    					formdata.append("file",fileUser);
+    					xhr.send(formdata);
+    					xhr.onreadystatechange=function(){
+    						if(xhr.readyState==4){
+    							if(xhr.status==200){
+    								var imgstr=xhr.responseText;
+    								div.innerHTML = '<img src="'+imgstr+'">'
+    							}
+    						}
+    					}
+    				}
+    					mui.init();
+      				document.getElementById("shezhi").addEventListener('tap',function(){
+      				mui.openWindow({
+					url: 'sub/censhezhi.html', 
+					id:'shezhi'
+				})
+      			})
+    			</script>
+    		<!--con--end-->
+    	</div>
+    	<!--4//第四页个人中心结束-->
+    </div>
+    <!--tab切换部分js-->
+    <script type="text/javascript">
+    	var btns=document.getElementById("chooseBox");
+    	var btnss=btns.children;
+    	console.log(btnss);
+    	var cont=document.getElementById("divBox");
+    	var conts=cont.children;
+    	console.log(conts);
+    	for(var i=0;i<btnss.length;i++){
+    		console.log("222");
+    		btnss[i].addEventListener("tap",function(){
+    			for(var j=0;j<btnss.length;j++){
+    				if(this==btnss[j]){
+    					conts[j].style.display="block";
+    				}else{
+    					conts[j].style.display="none";
+    				}
+    			}
+    		})
+    	}
+    </script>
+     <!--tab切换部分js结束-->
     <!--底座部分结束-->
 </body>
 </html>

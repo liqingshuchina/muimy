@@ -1,7 +1,14 @@
 {
 	"index.html": {
 		"refer": [
-			"sub/daohang.html"
+			"sub/daohang.html",
+			"sub/carmesg.html",
+			"sub/censhezhi.html"
+		]
+	},
+	"sub/censhezhi.html": {
+		"refer": [
+			"index.html"
 		]
 	}
 }

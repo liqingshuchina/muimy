@@ -31,3 +31,234 @@ body{
 	
 	list-style: none;
 }
+/*添加车辆部分*/
+.tianjia{
+	width: 100%;
+	height: 150px;
+	background-color: #eee;
+	/*margin-bottom: 200px;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.tjkuang{
+	width: 90%;
+	height: 86%;
+	border: 2px solid #3648a4;
+	border-radius: 15px;
+	background-color: #b6e2fa;
+	text-align: center;
+}
+.tjkuang span{
+	margin-top: 35px;
+}
+/*新增车辆跳转页面*/
+.newcar{
+	background-color: #2e67a5 ;
+}
+.newcar a{
+	color: #fff;
+}
+.newcar h1{
+	color: #fff;
+}
+/*温馨提示*/
+.wtip{
+	background: yellow;
+}
+.wtip p{
+	color:orange ;
+}
+/*选择车辆类型*/
+.cartype{
+	margin-top: 10px;
+	color: #333;
+	border-bottom: 1px solid #ececec;
+}
+.zencar{
+	background-color: #fff;
+	border: none;
+	/*display: block;*/
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+}
+.zencar b{
+	color: #000;
+	/*font-size: 14px;*/
+	/*float: left;*/
+	margin-left: 10px;
+}
+.zencar span{
+	color: #ccc;
+}
+.zencar i{
+	color: #333;
+	/*float: right;*/
+	margin-right: 15px;
+}
+/*车牌号*/
+
+.carpai{
+	background-color: #fff;
+	border: none;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	justify-content: space-between;
+}
+.carpai b{
+	color: #000;
+	margin-left: 10px;
+}
+.carpai span{
+	display: block;
+	width: 60px;
+	height: 40px;
+	line-height: 40px;
+	background: #2e67a5;
+	/*margin-left: 70px;*/
+	text-align: center;
+}
+.carpai span label{
+	color: #fff;
+	font-weight: bold;
+}
+.carpai span i{
+	color: #fff;
+	font-weight: bold;
+}
+.hucar a{
+	color: #fff;
+}
+.carpai input{
+	border: none;
+	width: 50%;
+	align-self:center;
+	margin-left:-50px;
+	margin-top: 13px;
+
+
+}
+.carpai:nth-child(1){
+	border-bottom: 1px solid #eee;
+}
+/*车主姓名*/
+.carnamer{
+	margin-top: 10px;
+}
+/*我的车辆部分*/
+.myche{
+	background-color:#2e67a5 ;
+}
+.myche h1{
+	color: #fff;
+	font-weight: bold;
+}
+.myche a{
+	float: right;
+	color: #fff;
+	font-size: 15px;
+	margin-top: 10px;
+	margin-right: 10px;
+	font-weight: bold;
+}
+.myxiaoxi{
+	background-color:#2e67a5 ;
+}
+.myxiaoxi h1{
+	color: #fff;
+	font-weight: bold;
+}
+/*个人中心部分*/
+/*top*/
+.cenren{
+	height:180px;
+	background-image: url(../img/ke.jpg);
+	background-size: 100% 100%;
+	position: relative;
+}
+.close{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	left: 40%;
+	top: 20%;
+}
+.close h5{
+	color: red;
+	font-size: 14px;
+	font-weight: bolder;
+	margin-left: 8px;
+	margin-bottom: 15px;
+}
+.close input{
+	display: block;
+	position: absolute;
+	opacity: 0;
+	/*z-index: 999;*/
+	width: 80px;
+	height: 80px;
+}
+.close div{
+	width: 80px;
+	height: 80px;
+	border: 1px solid #eee;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	opacity: 0.5;
+}
+.close div img{
+	width: 100%;
+	height: 100%;
+}
+/*设置*/
+.shezhi{
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+.shezhi i{
+	color: #fff;
+}
+/*top--end*/
+/*个人中心--基本信息部分*/
+.jibenmes h4{
+	height: 60px;
+	line-height: 50px;
+	border-top: 8px solid #eee;
+	border-bottom: 2px solid #eee;
+	box-sizing: border-box;
+	padding-left: 10px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.jibenmes ul{
+	margin-left: -20px;
+	display: flex;
+}
+.jibenmes ul li{
+	list-style: none;
+	width: 25%;
+	text-align: center;
+}
+.jibenmes ul li div{
+	color: #c40d2e;
+	font-weight: bolder;
+	font-size: 40px;
+}
+.jibenmes ul li p{
+	color: #000;
+	font-size: 14px;
+
+	margin-top: 8px;
+	font-family: "微软雅黑";
+}
+/*热点推荐部分*/
+.hot{
+	height: 60px;
+	border-bottom: 1px solid red;
+	
+}

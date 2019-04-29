@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" charset="utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<style type="text/css">
+			.sz{
+				background-color: #2e67a5;
+			}
+			.sz a{
+				color: #fff;
+			}
+			.sz h1{
+				color: #fff;
+				font-weight: bold;
+			}
+			li{
+				list-style: none;
+				height: 60px;
+				line-height: 40px;
+				border-bottom: 1px solid #C7C7CC;
+			}
+			.tuichu{
+				
+				width: 90%;
+				height: 55px;
+				margin:20px auto ;
+				background-color:#2e67a5 ;
+				font-weight: bolder;
+			}
+		
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav sz">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">设置</h1>
+		</header>
+		<!--content-->
+	<div class="mui-content">
+    <div class="mui-row">
+    	<!--1-->
+        <div class="mui-col-sm-6 mui-col-xs-12">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                   推荐有礼 
+                </a>
+            </li>
+        </div>
+        <!--2-->
+        <div class="mui-col-sm-6 mui-col-xs-12">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                   分享二维码
+                </a>
+            </li>
+        </div>
+        <!--3-->
+          <div class="mui-col-sm-6 mui-col-xs-12">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                   意见反馈
+                </a>
+            </li>
+        </div>
+        <!--4-->
+          <div class="mui-col-sm-6 mui-col-xs-12">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                   修改密码
+                </a>
+            </li>
+        </div>
+        <!--5-->
+          <div class="mui-col-sm-6 mui-col-xs-12">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    关于APP
+                </a>
+            </li>
+        </div>
+    </div>
+</div>
+<!--退出登录-->
+<button id="tantui" type="button" class="mui-btn mui-btn-blue mui-btn-block tuichu">退出登录</button>
+
+
+<script type="text/javascript">
+	mui.init();
+	 var btn=document.getElementById("tantui");
+	 console.log(btn);
+	 btn.onclick=function(){
+	 	mui.confirm("是否退出",function(){
+	 		console.log('22');
+	 		location.href="../index.html"
+	 	});
+	 }
+
+</script>
+
+
+
+	</body>
+</html>

@@ -131,7 +131,16 @@
 			"index.html": {
 				"resources": [],
 				"refer": [
-					"sub/daohang.html"
+					"sub/daohang.html",
+					"sub/carmesg.html",
+					"sub/censhezhi.html"
+				],
+				"priority": 0
+			},
+			"sub/censhezhi.html": {
+				"resources": [],
+				"refer": [
+					"index.html"
 				],
 				"priority": 0
 			}

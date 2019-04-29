@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" charset="utf-8"/>
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/my_gaibian_style.css" />
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+	</head>
+	<body style="background-color: #eee;">
+		<header class="mui-bar mui-bar-nav newcar">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">新增车辆</h1>
+		</header>
+		<!--温馨提示部分-->
+		<div class="mui-content wtip">
+		    <p>温馨提示:您申请绑定车辆后,
+		    	要确保车辆的真实性,便于进行预约审车,
+		    	预约车务服务,违章查询等服务时,方便平台审核和确保您能享受服务.</p>
+		</div>
+		<!--选择-->
+		<!--车辆类型部分-->
+		<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action">
+		    <!-- 可选择菜单 -->
+		    <ul class="mui-table-view" id="ulse">
+		    	<li class="cartype">选择车辆类型</li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型轿车</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型普通客车</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型面包车</a>
+		      </li>
+		    </ul>
+		    <!-- 取消菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell" id="liqx">
+		        <a href="#sheet1"><b>取消</b></a>
+		      </li>
+		    </ul>
+		</div>
+		<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block zencar">
+			<b>车辆类型</b>
+			<span id="slect">请选择车辆类型</span>
+			<i class="mui-icon mui-icon-arrowright"></i>
+		</a>
+		<!--车辆类型部分结束-->
+		<!--车牌号部分--><!--发动机后六位-->
+		<div class="cardong">
+			<!--车牌-->
+			<div class="carpai">
+				<b>车牌号</b>
+				<span class="hucar" id="diqu">
+						<label>沪</label>
+						<i class="mui-icon mui-icon-arrowdown"></i>
+				</span>
+				<input type="text" class="inpcar" placeholder="请输入车牌号码" />
+			</div>
+			<!--发动机号-->
+			<div class="carpai">
+				<b>发动机后六位</b>
+				
+				<input type="text" class="inpcar" placeholder="请输入发动机后六位" />
+			</div>
+		</div>
+		<!--车牌号部分结束-->
+		<!--车主姓名部分-->
+		<div class="carnamer">
+			<!--姓名部分-->
+			<div class="carpai">
+				<b>车主姓名</b>
+				<input type="text" class="inpcar" placeholder="请输入车主姓名" />
+			</div>
+			<!--选择-->
+		<!--车辆类型部分-->
+		<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action">
+		    <!-- 可选择菜单 -->
+		    <ul class="mui-table-view" id="ulse">
+		    	<li class="cartype">使用性质</li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">非营运</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">出租客运</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">货运</a>
+		      </li>
+		    </ul>
+		    <!-- 取消菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell" id="liqx">
+		        <a href="#sheet1"><b>取消</b></a>
+		      </li>
+		    </ul>
+		</div>
+		<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block zencar">
+			<b>营运性质</b>
+			<span id="slect">请选择使用性质</span>
+			<i class="mui-icon mui-icon-arrowright"></i>
+		</a>
+		<!--车辆类型部分结束-->
+		<!--选择-->
+		<!--车辆类型部分-->
+		<div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action">
+		    <!-- 可选择菜单 -->
+		    <ul class="mui-table-view" id="ulse">
+		    	<li class="cartype">选择车辆类型</li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型轿车</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型普通客车</a>
+		      </li>
+		      <li class="mui-table-view-cell" id="lise">
+		        <a href="#">小型面包车</a>
+		      </li>
+		    </ul>
+		    <!-- 取消菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell" id="liqx">
+		        <a href="#sheet1"><b>取消</b></a>
+		      </li>
+		    </ul>
+		</div>
+		<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block zencar">
+			<b>车辆类型</b>
+			<span id="slect">请选择车辆类型</span>
+			<i class="mui-icon mui-icon-arrowright"></i>
+		</a>
+		<!--车辆类型部分结束-->
+		
+		</div>
+<!--注册日期开始-->
+	<div class="date">
+		<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block zencar">
+			<b>车辆类型</b>
+			<span id="slect">请选择车辆类型</span>
+			<i class="mui-icon mui-icon-arrowright"></i>
+		</a>
+	</div>
+	
+		<script type="text/javascript">
+			var dtpicker = new mui.DtPicker({ 
+    "type": "time",
+    "customData": {
+        "h": [ 
+            { value: "am", text: "上午" },
+            { value: "pm", text: "下午" },
+        ]
+    } 
+})
+dtpicker.show(function(e) { 
+    console.log(e); 
+})
+		</script>
+	</body>
+</html>
