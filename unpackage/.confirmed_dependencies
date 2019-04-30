@@ -3,10 +3,16 @@
 		"refer": [
 			"sub/daohang.html",
 			"sub/carmesg.html",
-			"sub/censhezhi.html"
+			"sub/censhezhi.html",
+			"sub/xiangji.html"
 		]
 	},
 	"sub/censhezhi.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"sub/carmesg.html": {
 		"refer": [
 			"index.html"
 		]

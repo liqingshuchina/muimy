@@ -33,7 +33,9 @@
 <div class="tap" id="divBox">
     	<div class="shows hidden">
     			<header class="mui-bar mui-bar-nav navtou">
-		<a class="mui-pull-left mui-icon mui-icon-spinner-cycle mui-spin" id="qq"></a>
+		<a class="mui-pull-left mui-icon mui-icon-spinner-cycle mui-spin" id="qq">
+			
+		</a>
 	    <h1 class="mui-title">车务之家</h1>
 	    <a class=" mui-icon  mui-pull-right" id="daohang">导航</a>
 	</header>
@@ -44,6 +46,12 @@
       		mui.openWindow({
 			url: 'sub/daohang.html', 
 			id:'daohang'
+		})
+      	})
+      	document.getElementById("qq").addEventListener('tap',function(){
+      		mui.openWindow({
+			url: 'sub/xiangji.html', 
+			id:'qq'
 		})
       	})
     </script>
@@ -133,6 +141,13 @@
         		<p>添加车辆</p>
         	</div>
         </div>
+           <!--热点推荐部分-->
+  <div class="mui-content hot">
+     <b>热点推荐</b>
+  </div>
+    
+    
+    <!--热点推荐结束-->
          <script type="text/javascript" charset="utf-8">
       	mui.init();
       	document.getElementById("carmesg").addEventListener('tap',function(){
@@ -144,13 +159,7 @@
     </script>
      <!--添加车辆部分-->
     <!---------------------------------------------------++++++++++-->
-    <!--热点推荐部分-->
-  <div class="mui-content hot">
-      热点推荐
-  </div>
-    
-    
-    <!--热点推荐结束-->
+ 
     	</div>
     <!--1//首页部分结束-->
     <!--2//第二页我的车辆部分开始-->
@@ -289,26 +298,20 @@
     			<script type="text/javascript">
     				var file=document.getElementById("fileInp");
     				var div=document.getElementById("dis");
-    				
-    				//1.绑定点击事件
-    				file.onchange=function(){
-    					//获取用户上传的文件
-    					var fileUser=file.files[0];
-    					var xhr=new XMLHttpRequest();
-    					xhr.open("post","file.php");
-    					//单独设置
-    					var formdata=new FormData();
-    					formdata.append("file",fileUser);
-    					xhr.send(formdata);
-    					xhr.onreadystatechange=function(){
-    						if(xhr.readyState==4){
-    							if(xhr.status==200){
-    								var imgstr=xhr.responseText;
-    								div.innerHTML = '<img src="'+imgstr+'">'
-    							}
-    						}
+    				file.addEventListener("change",function(){
+    					//1.获取文件对象
+    					var fileuser=this.files[0];
+    					//2.创建文件读取器
+    					var fileReader=new FileReader();
+    					//3.利用读取器读取文件
+    					fileReader.readAsDataURL(fileuser);
+    					//4.读取需要时间,监听过程
+    					fileReader.onload=function(){
+    						var result=fileReader.result;
+    						div.innerHTML='<img src="'+result+'">'
     					}
-    				}
+    				})
+    			
     					mui.init();
       				document.getElementById("shezhi").addEventListener('tap',function(){
       				mui.openWindow({

@@ -5,8 +5,13 @@
 		<title></title>
 		<link rel="stylesheet" href="../css/mui.min.css" />
 		<link rel="stylesheet" href="../css/my_gaibian_style.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<link rel="stylesheet" href="../css/mui.picker.min.css" />
 		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/mui.picker.min.js" ></script>
+		
 	</head>
+	
 	<body style="background-color: #eee;">
 		<header class="mui-bar mui-bar-nav newcar">
 		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
@@ -131,30 +136,62 @@
 			<i class="mui-icon mui-icon-arrowright"></i>
 		</a>
 		<!--车辆类型部分结束-->
-		
 		</div>
 <!--注册日期开始-->
-	<div class="date">
-		<a href="#sheet" id="openSheet" class="mui-btn mui-btn-primary mui-btn-block zencar">
-			<b>车辆类型</b>
-			<span id="slect">请选择车辆类型</span>
-			<i class="mui-icon mui-icon-arrowright"></i>
-		</a>
-	</div>
-	
+	<button id='demo1' data-options='{}' class="btn mui-btn mui-btn-block datesty">
+			<div class="datetext">注册日期</div>
+			<div id="result">请选择注册日期</div>
+	</button>
+	<button id='demo1' data-options='{}' class="btn mui-btn mui-btn-block datesty">
+			<div class="datetext">检验有效期止</div>
+			<div id="result">请选择有效日期</div>
+	</button>
+	<button id='demo1' data-options='{}' class="btn mui-btn mui-btn-block datesty">
+			<div class="datetext">保险到期时间</div>
+			<div id="result">请选择保险到期时间</div>
+	</button>
 		<script type="text/javascript">
-			var dtpicker = new mui.DtPicker({ 
-    "type": "time",
-    "customData": {
-        "h": [ 
-            { value: "am", text: "上午" },
-            { value: "pm", text: "下午" },
-        ]
-    } 
-})
-dtpicker.show(function(e) { 
-    console.log(e); 
-})
+
+			(function($) {
+				$.init();
+				var result = $('#result')[0];
+				var btns = $('.btn');
+				btns.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var _self = this;
+						if(_self.picker) {
+							_self.picker.show(function (rs) {
+								result.innerText =  rs.text;
+								_self.picker.dispose();
+								_self.picker = null;
+							});
+						} else {
+							var optionsJson = this.getAttribute('data-options') || '{}';
+							var options = JSON.parse(optionsJson);
+							var id = this.getAttribute('id');
+							_self.picker = new $.DtPicker(options);
+							_self.picker.show(function(rs) {
+								result.innerText = rs.text;
+								_self.picker.dispose();
+								_self.picker = null;
+							});
+						}
+						
+					}, false);
+				});
+			})(mui);
+//			var subjiao=document.getElementById("subjiao");
+//	subjiao.addEventListener("tap",function(){
+//		location.href="../index.html"
+//	})
 		</script>
+	<input type="submit" value="提交" id="subjiao"/>
+		<script>
+				var subjiao=document.getElementById("subjiao");
+	subjiao.addEventListener("tap",function(){
+		location.href="../index.html"
+	})
+		</script>
+	
 	</body>
 </html>
